@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denise Mikhaela Vergara — Production Manager</title>
+<meta name="description" content="Denise Mikhaela Vergara — Production Manager. End-to-end production for commercial campaigns, brand collaborations, digital content, events, and music videos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ede1;
+    --ivory:#faf6ef;
+    --ink:#16130f;
+    --ink-soft:#211d18;
+    --beige:#cdbfa3;
+    --beige-band:#d9cdb4;
+    --beige-deep:#b09872;
+    --text:#1c1813;
+    --muted:#4d4537;
+    --muted-light:#8a8170;
+    --line:rgba(20,16,12,0.14);
+    --line-dark:rgba(243,237,225,0.14);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Jost',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--cream);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--ink);color:var(--cream)}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.04;letter-spacing:.005em}
+  .serif-i{font-style:italic;font-weight:500}
+  .eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;font-weight:500}
+
+  /* ===== MEDIA / SLIDER (shared system) ===== */
+  .media{position:relative;width:100%;height:100%;min-height:inherit;overflow:hidden;background:#0a0a0a}
+  .media .slides{display:flex;height:100%;will-change:transform;transition:transform .85s cubic-bezier(.65,0,.2,1)}
+  .media .slide{min-width:100%;height:100%;position:relative}
+  .media img{width:100%;height:100%;object-fit:cover;display:block}
+  .media.fade .slides{display:block;transition:none}
+  .media.fade .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+  .media.fade .slide.on{opacity:1}
+  .media .arr{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:40px;height:40px;border-radius:50%;
+    border:1px solid rgba(243,237,225,.55);background:rgba(20,16,12,.35);color:#fff;font-size:18px;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;backdrop-filter:blur(5px);transition:background .25s,opacity .3s;opacity:0}
+  .media:hover .arr{opacity:1}
+  .media .arr.prev{left:12px}.media .arr.next{right:12px}
+  .media .arr:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+  .media .dots{position:absolute;bottom:13px;left:50%;transform:translateX(-50%);display:flex;gap:7px;z-index:4}
+  .media .dot{width:7px;height:7px;border-radius:50%;border:none;background:rgba(243,237,225,.5);cursor:pointer;padding:0;transition:width .3s,background .3s}
+  .media .dot.on{width:22px;border-radius:4px;background:var(--cream)}
+  .media .count{position:absolute;top:13px;right:14px;z-index:4;font-size:10px;letter-spacing:.16em;color:#fff;background:rgba(20,16,12,.5);backdrop-filter:blur(5px);padding:5px 11px;border-radius:30px}
+  .media .ph2{position:absolute;inset:0;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;
+    background:radial-gradient(120% 90% at 30% 10%,rgba(205,191,163,.3),transparent 60%),linear-gradient(160deg,#cfc4ad,#ada287);color:#5e564a;text-align:center;padding:24px}
+  .media .ph2 b{font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600;letter-spacing:.04em}
+  .media .ph2 small{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+  @media(hover:none){.media .arr{display:none}}
+  .media-video{position:relative;width:100%;height:100%;min-height:inherit;overflow:hidden;background:#000}
+  .media-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  /* ===== NAV ===== */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:20px 28px;transition:background .4s,padding .4s,box-shadow .4s}
+  nav.scrolled{background:rgba(243,237,225,.9);backdrop-filter:blur(12px);padding:13px 28px;box-shadow:0 1px 0 var(--line)}
+  .brand{font-family:var(--serif);font-size:22px;letter-spacing:.2em;font-weight:700;color:var(--ink)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:400;transition:color .25s}
+  .nav-links a:hover{color:var(--beige-deep)}
+  .nav-links a.cta{border:1px solid var(--ink);padding:9px 18px;border-radius:2px;transition:all .25s}
+  .nav-links a.cta:hover{background:var(--ink);color:var(--cream)}
+  .nav-toggle{display:none;background:none;border:none;color:var(--ink);font-size:22px;cursor:pointer;z-index:101}
+  /* nav adapts: light over the dark hero at top, dark once scrolled onto cream */
+  nav:not(.scrolled) .brand{color:var(--cream)}
+  nav:not(.scrolled) .nav-toggle{color:var(--cream)}
+  @media(min-width:861px){
+    nav:not(.scrolled) .nav-links a{color:var(--cream)}
+    nav:not(.scrolled) .nav-links a:hover{color:var(--beige)}
+    nav:not(.scrolled) .nav-links a.cta{border-color:rgba(243,237,225,.7);color:var(--cream)}
+    nav:not(.scrolled) .nav-links a.cta:hover{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+  }
+  .menu-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.4);opacity:0;visibility:hidden;transition:opacity .4s;z-index:99}
+  .menu-backdrop.open{opacity:1;visibility:visible}
+  .switch{position:fixed;right:18px;bottom:18px;z-index:120;background:var(--ink);color:var(--cream);font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;padding:11px 18px;border-radius:30px;box-shadow:0 6px 24px rgba(0,0,0,.25);transition:transform .25s,background .25s}
+  .switch:hover{transform:translateY(-2px);background:var(--beige-deep)}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;
+    background:radial-gradient(120% 90% at 50% 8%,rgba(181,157,119,.28),transparent 58%),linear-gradient(180deg,#100e0b 0%,#1d1a15 55%,#100e0b 100%)}
+  .hero #heroImg{position:absolute;inset:0;z-index:0;overflow:hidden;background:#0d0b09}
+  .hero #heroImg img{width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(.85) grayscale(.2)}
+  .hero-video{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    width:max(100%,177.78vh);height:max(100%,56.25vw);border:0;pointer-events:none}
+  .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(8,7,6,.62),rgba(8,7,6,.42) 40%,rgba(8,7,6,.8))}
+  .hero-inner{position:relative;z-index:2;padding:130px 28px 70px;max-width:900px}
+  .hero .eyebrow{display:block;color:var(--beige);margin-bottom:30px}
+  .hero h1{font-size:clamp(46px,8.5vw,110px);color:var(--cream);line-height:1.0;letter-spacing:.01em;font-weight:500}
+  .hero h1 .it{font-style:italic;font-weight:400;color:var(--beige)}
+  .hero .role{font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--beige);margin:24px 0 16px}
+  .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2.3vw,26px);color:var(--cream);opacity:.9;margin:0 auto 38px;max-width:560px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;padding:15px 34px;cursor:pointer;font-weight:400;transition:all .3s;border:1px solid var(--cream);color:var(--cream);background:none}
+  .btn:hover{background:var(--cream);color:var(--ink)}
+  .btn.dark{border-color:var(--ink);color:var(--ink)}
+  .btn.dark:hover{background:var(--ink);color:var(--cream)}
+  .btn.solid-dark{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+  .btn.solid-dark:hover{background:var(--beige-deep);border-color:var(--beige-deep)}
+
+  /* ===== PRESS / BRAND STRIP ===== */
+  .press{background:var(--beige-band);border-top:1px solid rgba(20,16,12,.08);border-bottom:1px solid rgba(20,16,12,.08);overflow:hidden}
+  .marquee{overflow:hidden;padding:26px 0}
+  .marquee-track{display:flex;align-items:center;gap:62px;width:max-content;animation:marq 46s linear infinite}
+  .press:hover .marquee-track{animation-play-state:paused}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .brand-cell{flex:none;display:flex;align-items:center;justify-content:center;height:60px}
+  .press-logo{max-height:42px;max-width:132px;width:auto;object-fit:contain;opacity:.9;transition:opacity .25s}
+  .brand-cell:hover .press-logo{opacity:1}
+  .brand-item{font-family:var(--serif);font-size:clamp(16px,1.9vw,23px);font-weight:600;letter-spacing:.06em;color:var(--ink);opacity:.85;white-space:nowrap;transition:opacity .25s}
+  .brand-cell:hover .brand-item{opacity:1}
+  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto;gap:40px}}
+
+  /* ===== ABOUT (dark band) ===== */
+  .about{background:var(--ink);color:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:54px;align-items:center}
+  .about-text .eyebrow{color:var(--beige);display:block;margin-bottom:20px}
+  .about-text h2{font-size:clamp(38px,5.5vw,68px);color:var(--cream);margin-bottom:24px}
+  .about-text .lead{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.3vw,25px);color:var(--cream);line-height:1.4;margin-bottom:22px}
+  .about-text p{color:#e2d9c8;font-size:15px;margin-bottom:14px}
+  .about-photo{height:560px;border:1px solid var(--line-dark);overflow:hidden}
+  .about-photo .media{min-height:100%}
+
+  /* ===== WHY (light band, image + checklist) ===== */
+  .why{background:var(--ivory)}
+  .why-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:center}
+  .why-media{min-height:540px;border:1px solid var(--line);overflow:hidden;position:relative}
+  .why-text .eyebrow{color:var(--beige-deep);display:block;margin-bottom:16px}
+  .why-text h2{font-size:clamp(32px,4.6vw,56px);color:var(--ink);margin-bottom:18px}
+  .why-text .intro{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--muted);margin-bottom:28px}
+  .check{display:flex;gap:14px;margin-bottom:18px}
+  .check .ic{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--ink);margin-top:2px}
+  .check .ct b{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600;display:block;margin-bottom:2px}
+  .check .ct span{font-size:13.5px;color:var(--muted)}
+
+  /* ===== SECTION SHELL ===== */
+  .section-pad{padding:104px 0}
+  .sec-head{max-width:780px;margin-bottom:54px}
+  .sec-head .eyebrow{display:block;margin-bottom:18px;color:var(--beige-deep)}
+  .sec-head h2{font-size:clamp(34px,5.2vw,62px);color:var(--ink);margin-bottom:20px}
+  .sec-head p{color:var(--muted);font-size:16px;max-width:600px}
+
+  /* ===== WORK ===== */
+  .work{background:var(--cream)}
+  .cat{margin-top:78px}.cat:first-of-type{margin-top:0}
+  .cat-label{display:flex;align-items:center;gap:18px;margin-bottom:30px}
+  .cat-label h3{font-size:clamp(19px,2.3vw,27px);color:var(--ink);white-space:nowrap;font-weight:700;letter-spacing:.02em}
+  .cat-label .line{height:1px;background:var(--line);flex:1}
+  .prow{display:grid;grid-template-columns:1.08fr .92fr;gap:0;margin-bottom:22px;align-items:stretch;background:var(--ivory);border:1px solid var(--line)}
+  .prow-media{min-height:380px;overflow:hidden;position:relative}
+  .prow.rev .prow-media{order:2}
+  .prow-text{padding:42px 40px;display:flex;flex-direction:column;justify-content:center;gap:13px}
+  .prow-text .tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--beige-deep)}
+  .prow-text h4{font-size:clamp(24px,2.6vw,33px);color:var(--ink);line-height:1.12}
+  .prow-text .feat{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--muted)}
+  .prow-text .role-pill{align-self:flex-start;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:5px 13px;border-radius:30px}
+  .prow-text p.desc{color:var(--muted);font-size:14.5px;line-height:1.65}
+
+  /* ===== SERVICES ===== */
+  .services{background:var(--ink);color:var(--cream)}
+  .services .sec-head h2{color:var(--cream)}.services .sec-head p{color:#cdc3b0}.services .sec-head .eyebrow{color:var(--beige)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .svc{border:1px solid var(--line-dark);padding:34px 28px;background:var(--ink-soft);transition:transform .35s,border-color .35s}
+  .svc:hover{transform:translateY(-5px);border-color:rgba(205,191,163,.45)}
+  .svc .no{font-family:var(--serif);font-size:28px;color:var(--beige);margin-bottom:16px;display:block}
+  .svc h4{font-size:23px;color:var(--cream);margin-bottom:11px}
+  .svc p{color:#cabfac;font-size:14px}
+
+  /* ===== CONTACT ===== */
+  .contact{background:var(--beige-band);text-align:center}
+  .contact h2{font-size:clamp(40px,6.5vw,86px);color:var(--ink);margin-bottom:22px;line-height:1.03}
+  .contact .sub{color:var(--muted);max-width:520px;margin:0 auto 38px;font-size:16px}
+  .contact-links{display:flex;gap:13px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+  .contact-meta{display:flex;gap:42px;justify-content:center;flex-wrap:wrap;padding-top:38px;border-top:1px solid rgba(20,16,12,.18);max-width:760px;margin:0 auto}
+  .contact-meta .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--beige-deep);margin-bottom:8px}
+  .contact-meta .v{font-family:var(--serif);font-size:18px;color:var(--ink);font-weight:600}
+
+  footer{padding:34px 28px;background:var(--ink);color:#a59c8c}
+  .foot-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  .foot-in p{font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .to-top{font-size:11px;letter-spacing:.18em;text-transform:uppercase;transition:color .25s}
+  .to-top:hover{color:var(--beige)}
+
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .about-grid,.why-grid{grid-template-columns:1fr;gap:40px}
+    .about-photo{height:auto;aspect-ratio:4/5;max-width:440px}
+    .why-media{min-height:380px;order:-1}
+    .prow{grid-template-columns:1fr}
+    .prow-media{min-height:300px;order:-1!important}
+    .prow.rev .prow-media{order:-1}
+    .svc-grid{grid-template-columns:1fr}
+    .section-pad{padding:74px 0}
+  }
+  @media(max-width:860px){
+    .nav-links{position:fixed;inset:0 0 0 auto;width:76%;max-width:330px;height:100vh;background:var(--ivory);flex-direction:column;
+      justify-content:center;gap:26px;padding:40px;transform:translateX(100%);transition:transform .4s;box-shadow:-10px 0 40px rgba(0,0,0,.1)}
+    .nav-links.open{transform:none}
+    .nav-links a{font-size:13px}
+    .nav-toggle{display:block}
+    nav{padding:16px 22px}
+    nav.scrolled{padding:12px 22px}
+    .marquee-track{gap:44px}
+    .about-text{padding:0}
+    .prow-text{padding:34px 28px}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px}
+    .hero-inner{padding:118px 22px 64px}
+    .hero .eyebrow{letter-spacing:.22em;margin-bottom:22px}
+    .hero h1{font-size:clamp(40px,12vw,60px)}
+    .hero .role{letter-spacing:.28em;margin:18px 0 14px}
+    .hero .sub{font-size:17px;margin-bottom:30px}
+    .marquee{padding:20px 0}
+    .marquee-track{gap:36px}
+    .press-logo{max-height:32px;max-width:100px}
+    .brand-item{font-size:18px}
+    .section-pad{padding:64px 0}
+    .sec-head{margin-bottom:38px}
+    .about-photo{max-width:none}
+    .prow-text{padding:30px 22px}
+    .check .ct b{font-size:17px}
+    .contact-links{flex-direction:column;align-items:stretch}.contact-links .btn{justify-content:center}
+    .contact-meta{flex-direction:column;gap:22px}
+    .foot-in{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#top" class="brand">DENISE.</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#why" onclick="closeMenu()">Why Me</a>
+    <a href="#work" onclick="closeMenu()">Work</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#contact" class="cta" onclick="closeMenu()">Get in touch</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+</nav>
+<div class="menu-backdrop" id="menuBackdrop" onclick="closeMenu()"></div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div id="heroImg"><div class="media fade" data-base="hero" data-controls="off" data-interval="5500"></div></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Portfolio — Production Management</span>
+    <h1>Denise <span class="it">Mikhaela</span> Vergara</h1>
+    <p class="role">Production Manager</p>
+    <p class="sub">Bringing structure to creative work — behind the scenes.</p>
+    <a href="#work" class="btn">Explore the Work</a>
+  </div>
+</header>
+
+<!-- PRESS / BRAND STRIP -->
+<section class="press">
+  <div class="marquee">
+    <div class="marquee-track" id="brandTrack">
+      <span class="brand-cell"><img class="press-logo" src="hm.png" alt="H&amp;M" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">H&amp;M</span></span>
+      <span class="brand-cell"><img class="press-logo" src="adidas.png" alt="adidas" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">adidas</span></span>
+      <span class="brand-cell"><img class="press-logo" src="dove.png" alt="Dove" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Dove</span></span>
+      <span class="brand-cell"><img class="press-logo" src="nivea.png" alt="NIVEA" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">NIVEA</span></span>
+      <span class="brand-cell"><img class="press-logo" src="cetaphil.png" alt="Cetaphil" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Cetaphil</span></span>
+      <span class="brand-cell"><img class="press-logo" src="vaseline.png" alt="Vaseline" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Vaseline</span></span>
+      <span class="brand-cell"><img class="press-logo" src="dyson.png" alt="Dyson" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Dyson</span></span>
+      <span class="brand-cell"><img class="press-logo" src="avon.png" alt="Avon" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Avon</span></span>
+      <span class="brand-cell"><img class="press-logo" src="tsubaki.png" alt="Tsubaki" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Tsubaki</span></span>
+      <span class="brand-cell"><img class="press-logo" src="senka.png" alt="Senka" style="max-height:60px;max-width:155px" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Senka</span></span>
+      <span class="brand-cell"><img class="press-logo" src="fino.png" alt="Fino" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Fino</span></span>
+      <span class="brand-cell"><img class="press-logo" src="ma-cherie.png" alt="Ma Ch&eacute;rie" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">Ma Ch&eacute;rie</span></span>
+      <span class="brand-cell"><img class="press-logo" src="clavel.png" alt="CLAVEL" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"><span class="brand-item" style="display:none">CLAVEL</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT (dark) -->
+<section class="about section-pad" id="about">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <span class="eyebrow">Hi, I'm Denise</span>
+      <h2>I bring order to<br>creative chaos.</h2>
+      <p class="lead">I've worn a few different hats over the years — from administrative support and HR operations to assistant operations management and production management.</p>
+      <p>Each role shaped the way I work: organized, detail-oriented, and calm under pressure. My most recent experience brought everything together — managing projects and teams, coordinating events, and making sure every moving piece runs smoothly from start to finish.</p>
+      <p>I balance both the operational side and the creative flow, finding simple, smart ways to turn ideas into reality while keeping everything organized behind the scenes.</p>
+    </div>
+    <div class="about-photo reveal"><div class="media" data-base="denise"></div></div>
+  </div>
+</section>
+
+<!-- WHY (light) -->
+<section class="why section-pad" id="why">
+  <div class="wrap why-grid">
+    <div class="why-media reveal"><div class="media" data-base="clavel-2025"></div></div>
+    <div class="why-text reveal">
+      <span class="eyebrow">Welcome to Denise's world…</span>
+      <h2>Why I'm right for<br>your production</h2>
+      <p class="intro">With a sharp eye for detail and a calm hand on logistics, I make complex shoots feel effortless.</p>
+      <div class="check"><div class="ic">✓</div><div class="ct"><b>End-to-end ownership</b><span>From pre-production planning to final asset delivery — one point of accountability.</span></div></div>
+      <div class="check"><div class="ic">✓</div><div class="ct"><b>Budget &amp; logistics, handled</b><span>Costing, vendors, props, schedules — protected vision, protected bottom line.</span></div></div>
+      <div class="check"><div class="ic">✓</div><div class="ct"><b>Calm on set</b><span>Crew, talent, and creative teams stay aligned, even when the day gets complicated.</span></div></div>
+      <div class="check"><div class="ic">✓</div><div class="ct"><b>Brand-true execution</b><span>Approvals and delivery that stay faithful to the brand's vision, every time.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work section-pad" id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Campaigns, collaborations &amp; productions</h2>
+      <p>A selection of commercial campaigns, brand collaborations, digital content, events, and music videos — managed from pre-production to final execution.</p>
+    </div>
+
+    <div class="cat">
+      <div class="cat-label reveal"><h3>Commercial Campaigns &amp; Brand Collabs</h3><span class="line"></span></div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="dbtk-hm"></div></div>
+        <div class="prow-text"><span class="tag">Brand Collab</span><h4>DBTK &times; H&amp;M — The World is My Home</h4><p class="feat">feat. Andrea Brillantes, BGYO, Adie, Jeff Ong &amp; DBTK co.</p><span class="role-pill">Production Manager</span><p class="desc">Led production management for H&amp;M's first-ever collaboration with a local brand. Oversaw end-to-end logistics, coordinated cross-functional teams, and ensured seamless execution of a milestone project celebrating global and local creativity.</p></div>
+      </div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media" data-base="vivo-v25"></div></div>
+        <div class="prow-text"><span class="tag">Commercial Campaign</span><h4>Vivo V25 Series</h4><p class="feat">feat. Maine Mendoza</p><span class="role-pill">Production Manager</span><p class="desc">Managed the campaign shoot highlighting the 64MP OIS Ultra-Sensing Camera. Oversaw pre-production planning and logistics, coordinated creative and technical teams, and ran on-set operations for a lifestyle-driven tech launch.</p></div>
+      </div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="lbc-angel"></div></div>
+        <div class="prow-text"><span class="tag">Commercial Campaign</span><h4>LBC Project: Angel</h4><p class="feat">feat. Luday &amp; Quiccs</p><span class="role-pill">Production Manager</span><p class="desc">Managed a campaign underscoring LBC's trusted delivery, courier, and logistics services. Oversaw pre-production planning, artist collaboration, and on-set execution — merging brand storytelling with local creative culture.</p></div>
+      </div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media-video"><iframe src="https://drive.google.com/file/d/1QzlXfnK6iCPJXKTZRzhFWKM4K8G746ZL/preview" allow="autoplay" allowfullscreen loading="lazy" title="LBC Project Asenso Hub video"></iframe></div></div>
+        <div class="prow-text"><span class="tag">Commercial Campaign · Video</span><h4>LBC Project: Asenso Hub</h4><p class="feat">Connecting online sellers with LBC business solutions</p><span class="role-pill">Production Manager</span><p class="desc">Oversaw production and operational flow for a campaign designed to connect with online sellers. Coordinated pre-production requirements, aligned creative and client teams, and ensured seamless execution across shoot and event operations.</p></div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-label reveal"><h3>Digital &amp; Social Media Campaigns</h3><span class="line"></span></div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="clavel-women"></div></div>
+        <div class="prow-text"><span class="tag">Clavel Curated Campaign</span><h4>Women's Month 2022</h4><p class="feat">feat. Gelai Penales, Nicole Anjela &amp; Kishan Garcia</p><span class="role-pill">In-House Production Manager</span><p class="desc">Worked closely with the creative team and talent while handling schedules, logistics, and vendors — keeping the process flowing from planning to final rollout. A meaningful project celebrating women's stories and voices.</p></div>
+      </div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media" data-base="clavel-patty"></div></div>
+        <div class="prow-text"><span class="tag">Clavel Curated Campaign</span><h4>Endings &amp; New Beginnings</h4><p class="feat">feat. Patty Tiu</p><span class="role-pill">Production Coordination</span><p class="desc">Led in-house production coordination for a special feature on Patty Tiu's retirement from DJing. Managed timelines, logistics, and on-set execution while coordinating with partner brands — capturing her journey and impact on the music scene.</p></div>
+      </div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="clavel-ocs"></div></div>
+        <div class="prow-text"><span class="tag">Clavel Curated</span><h4>feat. One Click Straight</h4><p class="feat">In partnership with Vans Philippines</p><span class="role-pill">In-House Production Manager</span><p class="desc">Oversaw end-to-end production for One Click Straight's shoots and performances. Handled pre-production coordination, logistics, and on-site execution while coordinating with Vans Philippines on brand collaborations aligned with the band's creative direction.</p></div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-label reveal"><h3>Branded Content Series</h3><span class="line"></span></div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media" data-base="clavel-2024"></div></div>
+        <div class="prow-text"><span class="tag">Clavel Curated Content 2024</span><h4>2024 Content Lineup</h4><p class="feat">feat. The KoolPals, Icoy Rapadas, UDD &amp; Because</p><span class="role-pill">Production Coordination</span><p class="desc">Led production coordination across shoots, brand collaborations, and creative productions centered around street culture, music, and lifestyle.</p></div>
+      </div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="clavel-2025"></div></div>
+        <div class="prow-text"><span class="tag">Clavel Curated Content 2025</span><h4>2025 Content Lineup</h4><p class="feat">feat. August Wahh, Johnoy Danao, CHICOSCI &amp; Waiian</p><span class="role-pill">Production Manager</span><p class="desc">Oversaw end-to-end production for these final in-house projects — from pre-production planning and brand coordination to on-site execution. Highlighted emerging artists, women-led initiatives, and the intersection of street culture, fashion, and music.</p></div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-label reveal"><h3>Event Activations</h3><span class="line"></span></div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media" data-base="finetoday"></div></div>
+        <div class="prow-text"><span class="tag">Event Activation</span><h4>FineToday Rituals: KOL Experience Day</h4><p class="feat">Siren Studios Manila</p><span class="role-pill">Production Manager</span><p class="desc">Handled end-to-end coordination, supplier management, logistics, and on-ground execution to ensure a smooth experience from pre-production to event day.</p></div>
+      </div>
+      <div class="prow reveal">
+        <div class="prow-media"><div class="media" data-base="adidas-event"></div></div>
+        <div class="prow-text"><span class="tag">Event Activation</span><h4>adidas Friends Kickoff Activation</h4><p class="feat">TikTok Pantry Office</p><span class="role-pill">Production Manager</span><p class="desc">Oversaw production requirements, coordinated with partners and suppliers, and supported the team throughout event setup and live execution.</p></div>
+      </div>
+    </div>
+
+    <div class="cat">
+      <div class="cat-label reveal"><h3>Music Video Production</h3><span class="line"></span></div>
+      <div class="prow rev reveal">
+        <div class="prow-media"><div class="media-video"><iframe src="https://drive.google.com/file/d/11UFZwtygQS_6ZqvuquvuMoS27Zp8qM1m/preview" allow="autoplay" allowfullscreen loading="lazy" title="SIYUDAD - Agent2k music video"></iframe></div></div>
+        <div class="prow-text"><span class="tag">Official Music Video</span><h4>SIYUDAD — Agent2k</h4><p class="feat">Director, artist &amp; creative team collaboration</p><span class="role-pill">Production Manager</span><p class="desc">Oversaw pre-production planning, location coordination, and on-set logistics. Worked closely with the director, artist, and creative team to bring to life a visual narrative amplifying the music's storytelling and urban aesthetic.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section-pad" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What I Do</span>
+      <h2>Production management, end to end</h2>
+      <p>From the first planning session to final asset delivery — I keep the operational engine running so the creative work can shine.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal"><span class="no">01</span><h4>Production Planning</h4><p>Pre-production strategy, timelines, scheduling, and call sheets that keep every shoot day on track.</p></div>
+      <div class="svc reveal"><span class="no">02</span><h4>Budgeting &amp; Costing</h4><p>Cost planning, quotations, and budget tracking that protect both the vision and the bottom line.</p></div>
+      <div class="svc reveal"><span class="no">03</span><h4>Logistics &amp; Props</h4><p>Sourcing, vendor and supplier management, props, and on-the-ground coordination across locations.</p></div>
+      <div class="svc reveal"><span class="no">04</span><h4>On-Set Coordination</h4><p>Live shoot and event management — keeping crew, talent, and creative teams aligned in real time.</p></div>
+      <div class="svc reveal"><span class="no">05</span><h4>Content Approvals</h4><p>Review cycles, client and brand alignment, and approval flows that keep deliverables moving.</p></div>
+      <div class="svc reveal"><span class="no">06</span><h4>Event Activations</h4><p>End-to-end activation production — from supplier coordination to live, on-ground execution.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section-pad" id="contact">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:var(--beige-deep)">Let's Work Together</span>
+    <h2 style="margin-top:18px">Let's bring your<br><span class="serif-i" style="color:var(--beige-deep)">next production</span> to life</h2>
+    <p class="sub">Available for production management, campaign shoots, brand collaborations, events, and content production.</p>
+    <div class="contact-links">
+      <a href="mailto:denisemikhaela.vergara@gmail.com" class="btn solid-dark">Email Me</a>
+      <a href="https://www.linkedin.com/in/denisemikhaela/" target="_blank" rel="noopener" class="btn dark">LinkedIn</a>
+      <a href="tel:+639564896439" class="btn dark">Call</a>
+    </div>
+    <div class="contact-meta">
+      <div><div class="k">Email</div><div class="v">denisemikhaela.vergara@gmail.com</div></div>
+      <div><div class="k">Phone</div><div class="v">+63 956 489 6439</div></div>
+      <div><div class="k">LinkedIn</div><div class="v">/in/denisemikhaela</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-in">
+    <p>&copy; <span id="yr"></span> Denise Mikhaela Vergara — Production Manager</p>
+    <a href="#top" class="to-top">Back to top &uarr;</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // duplicate brand marquee for a seamless infinite loop
+  (function(){ const t=document.getElementById('brandTrack'); if(t) t.innerHTML += t.innerHTML; })();
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+  const navLinks = document.getElementById('navLinks');
+  const backdrop = document.getElementById('menuBackdrop');
+  document.getElementById('navToggle').addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    backdrop.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  function closeMenu(){ navLinks.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow=''; }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.14});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ===== shared slider system =====
+  const EXTS = ['jpg','jpeg','png','webp','JPG','PNG','JPEG'];
+  function tryLoad(src){ return new Promise(res => { const im = new Image(); im.onload=()=>res(src); im.onerror=()=>res(null); im.src=src; }); }
+  async function resolveName(name){ for(const ext of EXTS){ const g = await tryLoad(name+'.'+ext); if(g) return g; } return null; }
+  async function probeBase(base){
+    const found = []; const first = await resolveName(base);
+    if(!first){ const alt = await resolveName(base+'-1'); if(alt) found.push(alt); else return found; } else { found.push(first); }
+    for(let i=2;i<=14;i++){ const g = await resolveName(base+'-'+i); if(!g) break; found.push(g); }
+    return found;
+  }
+  function render(media, srcs){
+    const base = media.dataset.base || '';
+    const isHero = media.closest('#heroImg');
+    if(srcs.length === 0){
+      if(isHero){ media.innerHTML=''; return; } // hero falls back to gradient, no placeholder
+      media.innerHTML = '<div class="ph2"><b>'+(base?base.replace(/-/g,' '):'Photo')+'</b><small>add '+(base||'photo')+'.jpg</small></div>';
+      return;
+    }
+    const fade = media.classList.contains('fade');
+    const slides = srcs.map(s => '<div class="slide"><img src="'+s+'" alt="" loading="lazy"></div>').join('');
+    let controls = '';
+    const showControls = srcs.length > 1 && media.dataset.controls !== 'off';
+    if(showControls){
+      const dots = srcs.map((_,i)=>'<button class="dot'+(i===0?' on':'')+'" data-i="'+i+'"></button>').join('');
+      controls = '<button class="arr prev">&#8249;</button><button class="arr next">&#8250;</button><div class="count">1 / '+srcs.length+'</div><div class="dots">'+dots+'</div>';
+    }
+    media.innerHTML = '<div class="slides">'+slides+'</div>'+controls;
+    if(fade) media.querySelectorAll('.slide')[0].classList.add('on');
+    if(srcs.length > 1) initSlider(media, srcs.length, fade);
+  }
+  function initSlider(media, n, fade){
+    const track = media.querySelector('.slides');
+    const slides = [...media.querySelectorAll('.slide')];
+    const dots = [...media.querySelectorAll('.dot')];
+    const counter = media.querySelector('.count');
+    let i=0, timer;
+    const go = (k) => { i=(k+n)%n;
+      if(fade){ slides.forEach((s,si)=>s.classList.toggle('on',si===i)); }
+      else { track.style.transform='translateX(-'+(i*100)+'%)'; }
+      dots.forEach((d,di)=>d.classList.toggle('on',di===i)); if(counter) counter.textContent=(i+1)+' / '+n; };
+    const next=()=>go(i+1), prev=()=>go(i-1);
+    const interval = parseInt(media.dataset.interval,10)||4200;
+    const start=()=>timer=setInterval(next,interval), stop=()=>clearInterval(timer), restart=()=>{stop();start();};
+    const np=media.querySelector('.next'), pp=media.querySelector('.prev');
+    if(np) np.onclick=()=>{next();restart();}; if(pp) pp.onclick=()=>{prev();restart();};
+    dots.forEach(d=>d.onclick=()=>{go(+d.dataset.i);restart();});
+    media.addEventListener('mouseenter',stop); media.addEventListener('mouseleave',start);
+    let x0=null;
+    media.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;stop();},{passive:true});
+    media.addEventListener('touchend',e=>{ if(x0===null)return; const dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40){dx<0?next():prev();} x0=null; start(); },{passive:true});
+    start();
+  }
+  document.querySelectorAll('.media').forEach(async (media) => {
+    if(media.dataset.images){
+      const srcs = media.dataset.images.split(',').map(s=>s.trim()).filter(Boolean);
+      const checked = []; for(const s of srcs){ const ok = await tryLoad(s); if(ok) checked.push(s); }
+      render(media, checked);
+    } else if(media.dataset.base){ render(media, await probeBase(media.dataset.base)); }
+  });
+</script>
+</body>
+</html>
